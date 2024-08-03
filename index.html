@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="query.css" />
+    <script defer src="script.js"></script>
+    <title>QR Master</title>
+  </head>
+  <body>
+    <section class="section-app">
+      <div class="container">
+        <div class="form-container">
+          <form class="form">
+            <label for="bank">Ngân hàng</label>
+            <select name="bank" id="bank" required>
+              <option value="">Chọn ngân hàng</option>
+            </select>
+            <br />
+            <label for="account">Số tài khoản</label>
+            <!-- <input type="text" id="account" required /> <br /> -->
+            <input type="number" id="account" /> <br />
+            <label for="amount">Số tiền chuyển</label>
+            <input type="number" id="amount" /> <br />
+            <label for="content">Nội dung chuyển khoản</label>
+            <input type="text" id="content" /> <br />
+            <button class="btn btn--form">Tạo mã</button>
+          </form>
+        </div>
+        <div class="qr-container">
+          <h1 class="qr-header center-text">QR Master</h1>
+          <div class="qr-wrapper"><img class="qr-img" src="" alt="" /></div>
+          <p class="qr-description center-text">
+            Mã của bạn sẽ xuất hiện tại đây &uarr;
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

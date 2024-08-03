@@ -1,0 +1,39 @@
+@media (max-width: 63em) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .form-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 42em) {
+  .container {
+    padding: 3.2rem;
+  }
+
+  .form-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 33em) {
+  .container {
+    padding: 1.6rem;
+  }
+
+  .qr-container {
+    padding: 3.2rem;
+    gap: 2.4rem;
+  }
+
+  .qr-wrapper {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .qr-img {
+    height: 30rem;
+  }
+}
