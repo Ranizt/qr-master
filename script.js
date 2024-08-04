@@ -36,4 +36,10 @@ function importBankList(list) {
   form.addEventListener('submit', handleClick);
 }
 
+qrCode.style.opacity = 0;
+
+qrCode.addEventListener('load', function () {
+  qrCode.style.opacity = 1;
+});
+
 getBankList().then(importBankList);

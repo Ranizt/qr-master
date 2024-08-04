@@ -80,6 +80,7 @@
 
 .qr-img {
   height: 30rem;
+  transition: all 0.3s;
 }
 
 .qr-description {
