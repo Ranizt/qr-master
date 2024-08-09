@@ -1,19 +1,21 @@
-'use strict';
+"use strict";
 // Selecting elements
-const inputSelect = document.querySelector('#bank');
-const inputAccount = document.querySelector('#account');
-const inputAmount = document.querySelector('#amount');
-const inputContent = document.querySelector('#content');
-const qrCode = document.querySelector('.qr-img');
-const form = document.querySelector('.form');
+const form = document.querySelector(".form");
+const inputSelect = form.querySelector("#bank");
+const inputAccount = form.querySelector("#account");
+const inputAmount = form.querySelector("#amount");
+const inputContent = form.querySelector("#content");
+const qrCode = document.querySelector(".qr-img");
+const inputRequiredList = form.querySelectorAll("[required]");
+console.log(inputRequiredList);
 
-let bank = '';
-let bankAccount = '';
-let bankAmount = '';
-let bankContent = '';
+let bank = "";
+let bankAccount = "";
+let bankAmount = "";
+let bankContent = "";
 
 async function getBankList() {
-  const res = await fetch('https://api.vietqr.io/v2/banks');
+  const res = await fetch("https://api.vietqr.io/v2/banks");
   const { data } = await res.json();
   return data;
 }
@@ -27,19 +29,21 @@ const handleClick = function (e) {
   qrCode.src = `https://img.vietqr.io/image/${bank}-${bankAccount}-compact.png?amount=${bankAmount}&addInfo=${bankContent}&accountName=`;
 };
 
-function importBankList(list) {
+const importBankList = function (list) {
   list.map(bank => {
     const html = `<option value="${bank.bin}">${bank.shortName}</option>`;
-    console.log(bank);
-    inputSelect.insertAdjacentHTML('beforeend', html);
+    // console.log(bank);
+    inputSelect.insertAdjacentHTML("beforeend", html);
   });
-  form.addEventListener('submit', handleClick);
-}
+  form.addEventListener("submit", handleClick);
+};
 
-qrCode.style.opacity = 0;
-
-qrCode.addEventListener('load', function () {
+qrCode.addEventListener("load", function () {
   qrCode.style.opacity = 1;
 });
-
+qrCode.style.opacity = 0;
+inputRequiredList.forEach(inp => {
+  const label = form.querySelector(`[for="${inp.id}"]`);
+  label.classList.add("required");
+});
 getBankList().then(importBankList);

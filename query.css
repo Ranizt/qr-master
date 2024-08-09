@@ -19,8 +19,12 @@
 }
 
 @media (max-width: 33em) {
+  .section-app {
+    padding: 3.2rem 0;
+  }
   .container {
     padding: 1.6rem;
+    gap: 3.2rem;
   }
 
   .qr-container {

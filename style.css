@@ -23,6 +23,12 @@
   font-weight: 500;
 }
 
+.required::after {
+  content: "*";
+  margin-left: 0.8rem;
+  color: red;
+}
+
 .form-container select,
 .form-container option {
   font-size: 1.6rem;
